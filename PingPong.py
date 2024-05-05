@@ -44,7 +44,8 @@ background =  transform.scale(image.load("77-Tennis-Courts-Doubles.jpg"), (700, 
 game = True
 finish = False
 
-ship = Player1('racket.png', 5, WIN_HEIGHT - 100, 80, 100, 10)
+player1 = Player1('racket.png', 5, WIN_HEIGHT - 100, 80, 100, 10)
+player2 = Player2('racket.png', 5, WIN_HEIGHT - 100, 80, 100, 10)
 
 while game:
     for e in event.get():
@@ -53,8 +54,10 @@ while game:
     if not finish:
         window.blit(background, (0, 0))
 
-        ship.reset()
-        ship.update()
+        Player1.reset()
+        Player1.update()
+        Player2.reset()
+        Player2.update()
 
     display.update()
     clock.tick(FPS)
